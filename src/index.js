@@ -1,3 +1,5 @@
+const teamData = [];
+
 function fetchTeams() {
     fetch("https://free-nba.p.rapidapi.com/teams", {
 	"method": "GET",
@@ -8,9 +10,8 @@ function fetchTeams() {
 })
 .then(res => res.json())
 .then(data => {
-    //const teamData = fetchData.data
-    teamData.push(data.data)
-    console.log(teamData)
+    teamData.push(...data.data)
+    //console.log(teamData[7])
     //console.log(Object.values(data.data))
     //console.log(Object.values(data.data[7]))
 })
@@ -19,7 +20,6 @@ function fetchTeams() {
         }
     )}
 
-const teamData = [];
 fetchTeams();
 
 
