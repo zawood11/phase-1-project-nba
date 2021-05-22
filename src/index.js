@@ -7,28 +7,35 @@ function fetchTeams() {
 	}
 })
 .then(res => res.json())
-.then(teams => {
-    // const teamData = teams.data
-    const teamData = Object.values(teams.data)
-    console.log(Object.values(teams.data))
-    console.log(teamData[7].abbreviation)
-    teamData.forEach(renderTeam)
+.then(data => {
+    //const teamData = fetchData.data
+    teamData.push(data.data)
+    console.log(teamData)
+    //console.log(Object.values(data.data))
+    //console.log(Object.values(data.data[7]))
 })
 .catch(err => {
 	console.error(err);
         }
     )}
 
-function renderTeam(teams) {
-
-    const teamContainer = document.getElementById("west-list")
-    const liTag = document.createElement('li')
-    const pTag = document.createElement('p')
-
-    pTag.innerText = 'team'
-    liTag.append(pTag)
-
-    teamContainer.appendChild(liTag)
-}
-
+const teamData = [];
 fetchTeams();
+
+
+
+
+// teamData.push(fetchTeams())
+//console.log(teamData)
+
+// function renderTeam(teams) {
+
+//     const teamContainer = document.getElementById("west-list")
+//     const liTag = document.createElement('li')
+//     const pTag = document.createElement('p')
+
+//     pTag.innerText = 'team'
+//     liTag.append(pTag)
+
+//     teamContainer.appendChild(liTag)
+// }
