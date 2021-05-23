@@ -12,8 +12,12 @@ function fetchTeams() {
 .then(data => {
     teamData.push(...data.data)
     //console.log(teamData[7])
-    //console.log(Object.values(data.data))
+    console.log(Object.values(data.data))
     //console.log(Object.values(data.data[7]))
+    const playoffTeamWest = [28, 14, 12, 6, 7, 24, 23, 13];
+    const playoffTeamEast = [22, 29, 19, 0, 16, 15, 2, 1];
+    playoffTeamWest.forEach(renderTeamWest);
+    playoffTeamEast.forEach(renderTeamEast);
 })
 .catch(err => {
 	console.error(err);
@@ -22,20 +26,24 @@ function fetchTeams() {
 
 fetchTeams();
 
+function renderTeamWest(team) {
 
+    const teamContainer = document.getElementById("west-list")
+    const liTag = document.createElement('li')
+    const pTag = document.createElement('p')
 
+    pTag.innerText = teamData[team].abbreviation
+    liTag.append(pTag)
+    teamContainer.appendChild(liTag)
+}
 
-// teamData.push(fetchTeams())
-//console.log(teamData)
+function renderTeamEast(team) {
 
-// function renderTeam(teams) {
+    const teamContainer = document.getElementById("east-list")
+    const liTag = document.createElement('li')
+    const pTag = document.createElement('p')
 
-//     const teamContainer = document.getElementById("west-list")
-//     const liTag = document.createElement('li')
-//     const pTag = document.createElement('p')
-
-//     pTag.innerText = 'team'
-//     liTag.append(pTag)
-
-//     teamContainer.appendChild(liTag)
-// }
+    pTag.innerText = teamData[team].abbreviation
+    liTag.append(pTag)
+    teamContainer.appendChild(liTag)
+}
