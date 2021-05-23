@@ -28,22 +28,22 @@ fetchTeams();
 
 function renderTeamWest(team) {
 
-    const teamContainer = document.getElementById("west-list")
+    const teamContainer = document.getElementById("westrd1")
     const liTag = document.createElement('li')
     const pTag = document.createElement('p')
 
-    pTag.innerText = teamData[team].abbreviation
+    pTag.innerText = teamData[team].full_name
     liTag.append(pTag)
     teamContainer.appendChild(liTag)
 }
 
 function renderTeamEast(team) {
 
-    const teamContainer = document.getElementById("east-list")
+    const teamContainer = document.getElementById("eastrd1")
     const liTag = document.createElement('li')
     const pTag = document.createElement('p')
 
-    pTag.innerText = teamData[team].abbreviation
+    pTag.innerText = teamData[team].full_name
     liTag.append(pTag)
     teamContainer.appendChild(liTag)
 }
