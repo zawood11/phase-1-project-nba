@@ -4,7 +4,7 @@ Team, Player Data IDs
         322: Donovan Mitchell
         104: Mike Conley
         176: Rudy Gobert
-        104: Joe Ingles
+        226: Joe Ingles
         54: Bojan Bogdanovic
     15: Memphis Grizzlies
         666786: Ja Morant
